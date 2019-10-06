@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Rock Paper Scissor</title>
+	<link rel="icon" href="download.jpg">
+	
+	<style>
+		body
+		{
+			padding: 20px;
+			padding-top: 0;
+			background-color: gray;
+		}
+		header
+		{
+			background-color: black;
+			padding: 40px;
+			margin-top: 0;
+		}
+		#info
+		{
+			color: white;
+			font-size: 35px;
+			width: 800px;
+			text-align: center;
+			margin-left: 25%;
+			margin-top: 40px;
+			border: solid 2px black;
+			padding: 10px;
+			background-color: indigo;
+		}
+
+		span{
+			font-size: 30px;
+		}
+
+		#rock
+		{
+			float: left;
+			margin-left: 20%;
+		}
+
+		#paper
+		{
+			float: right;
+			margin-right: 20%;
+		}
+
+		#scissor
+		{
+			margin-left: 43%;
+		}
+
+		#choice
+		{
+			text-align: center;
+			font-size: 25px;
+		}
+		#game
+		{
+			text-align: center;
+			font-size: 30px;
+			margin-left: 7%;
+		}
+		#images
+		{
+			margin:50px;
+		}
+		.image
+		{
+			cursor: pointer;
+		}
+
+		#uc
+		{
+			float: left;
+			margin-left: 15%;
+			font-size: 30px;
+		}
+
+		#cc{
+			float: right;
+			margin-right: 15%;
+			font-size: 30px;
+		}
+
+		#rock, #scissor, #paper
+		{
+			border-radius: 50%;
+		}
+
+		#d
+		{
+			color: white;
+			font-size: 25px;
+			width: 200px;
+			text-align: center;
+			margin-left: 44%;
+			margin-top: 40px;
+			border: solid 2px black;
+			padding: 10px;
+			background-color: indigo;
+		}
+		#score
+		{
+			width: 400px;
+			background-color: black;
+			color: white;
+			margin-left: 35%;
+		}
+	</style>
+</head>
+<body>
+	<header><h1 align="center" style="color: white;">ROCK PAPER SCISSOR ONLINE</h1></header>
+
+	<p id="info">
+		Hi, this is ME, your computer. I am glad you found me. I have been waiting for someone to make them relive their childhood shit. Right now I can only offer you a ROCK, PAPER, SCISSOR challenge but I promise I will be coming up with more fun time-wasters from your childhood. In the meantime, let's play this.
+	</p>
+
+	<div id="game">
+		<p id="score">
+			Score:<br>
+
+			User &nbsp : &nbsp <span id="us">&nbsp 0 &nbsp</span> - &nbsp <span id="co">0 &nbsp</span>&nbsp :&nbsp Computer
+		</p>
+		<span><b>Click to Choose an Option:<b></span>
+	</div>
+	<div id="images">
+		<img src="rock1.jpg" class="image" id="rock" title="Rock" onclick="rock()">
+		<img src="paper.jpg" class="image" id="paper" title="Paper" onclick="paper()">
+		<img src="scissor.jpg" class="image" id="scissor" title="Scissor" onclick="scissor()">
+	</div>
+	
+
+	<div id="choice">
+		<div id = "uc">YOU CHOSE &nbsp : &nbsp <span id = "userc"></span></div>
+
+		<div id = "cc">I CHOSE &nbsp : &nbsp<span id="c"></span></div>
+
+		<p id = "d"></p>
+	</div>
+	<script>
+		var a = ["ROCK", "PAPER", "SCISSOR"];
+
+var user = 0;
+var comp = 0;
+
+function rock(){
+	var y = Math.floor(Math.random()*3);
+
+	document.getElementById('userc').innerHTML = "ROCK";
+	document.getElementById('c').innerHTML = a[y];
+
+	if(a[y]=="SCISSOR")
+	{
+		document.getElementById('d').innerHTML = "Your Point"
+		user++;
+	}
+
+	else if(a[y]=="PAPER")
+	{
+		document.getElementById('d').innerHTML = "My Point";
+		comp++;
+	}
+
+	else document.getElementById('d').innerHTML = "Oops! Try Again";
+
+	document.getElementById('us').innerHTML = user;
+	document.getElementById('co').innerHTML = comp;
+
+	if(user == 5)
+	{
+		alert("Game Over. You Win! Please Refresh The Page to Play Again!")
+		document.getElementById('d').innerHTML = "You Win";
+		user = 0;
+		comp = 0;
+	}
+
+	else if(comp == 5)
+	{
+		alert("Game Over. I win! Please Refresh The Page To Play Again");
+		document.getElementById('d').innerHTML = "I Win";
+		user = 0;
+		comp = 0;
+	}
+}
+
+function paper(){
+	var y = Math.floor(Math.random()*3);
+
+	document.getElementById('userc').innerHTML = "PAPER";
+	document.getElementById('c').innerHTML = a[y];
+
+	if(a[y]=="ROCK")
+	{
+		document.getElementById('d').innerHTML = "Your Point"
+		user++;
+	}
+
+	else if(a[y]=="SCISSOR")
+	{
+		document.getElementById('d').innerHTML = "My Point";
+		comp++;
+	}
+
+	else document.getElementById('d').innerHTML = "Oops! Try Again";
+
+	document.getElementById('us').innerHTML = user;
+	document.getElementById('co').innerHTML = comp;
+
+	if(user == 5)
+	{
+		alert("Game Over. You Win! Please Refresh The Page to Play Again!")
+		document.getElementById('d').innerHTML = "You Win";
+		user = 0;
+		comp = 0;
+	}
+
+	else if(comp == 5)
+	{
+		alert("Game Over. I win! Please Refresh The Page to Play Again!");
+		document.getElementById('d').innerHTML = "I Win";
+		user = 0;
+		comp = 0;
+	}
+}
+
+function scissor(){
+	var y = Math.floor(Math.random()*3);
+
+	document.getElementById('userc').innerHTML = "SCISSOR";
+	document.getElementById('c').innerHTML = a[y];
+
+	if(a[y]=="PAPER")
+	{
+		document.getElementById('d').innerHTML = "Your Point"
+		user++;
+	}
+
+	else if(a[y]=="ROCK")
+	{
+		document.getElementById('d').innerHTML = "My Point";
+		comp++;
+	}
+
+	else document.getElementById('d').innerHTML = "Oops! Try Again";
+
+	document.getElementById('us').innerHTML = user;
+	document.getElementById('co').innerHTML = comp;
+
+	if(user >= 5)
+	{
+		alert("Game Over. You Win! Please Refresh The page to Play Again!")
+		document.getElementById('d').innerHTML = "You Win";
+		user = 0;
+		comp = 0;
+	}
+
+	else if(comp >= 5)
+	{
+		alert("Game Over. I win! Please Refresh The page to Play Again!");
+		document.getElementById('d').innerHTML = "I Win";
+
+		user = 0;
+		comp = 0;
+	}
+}
+
+
+	</script>
+
+</body>
+</html>
