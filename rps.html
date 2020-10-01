@@ -111,7 +111,7 @@
 	</style>
 </head>
 <body>
-	<header><h1 align="center" style="color: white;">ROCK PAPER SCISSOR ONLINE</h1></header>
+	<header><h1 align="center" style="color: white;">ROCK PAPER SCISSORS ONLINE</h1></header>
 
 	<p id="info">
 		Hi, this is ME, your computer. I am glad you found me. I have been waiting for someone to make them relive their childhood shit. Right now I can only offer you a ROCK, PAPER, SCISSOR challenge but I promise I will be coming up with more fun time-wasters from your childhood. In the meantime, let's play this.
@@ -128,7 +128,7 @@
 	<div id="images">
 		<img src="rock1.jpg" class="image" id="rock" title="Rock" onclick="rock()">
 		<img src="paper.jpg" class="image" id="paper" title="Paper" onclick="paper()">
-		<img src="scissor.jpg" class="image" id="scissor" title="Scissor" onclick="scissor()">
+		<img src="scissor.jpg" class="image" id="scissors" title="Scissors" onclick="scissor()">
 	</div>
 	
 
@@ -140,7 +140,7 @@
 		<p id = "d"></p>
 	</div>
 	<script>
-		var a = ["ROCK", "PAPER", "SCISSOR"];
+		var a = ["ROCK", "PAPER", "SCISSORS"];
 
 var user = 0;
 var comp = 0;
@@ -228,7 +228,7 @@ function paper(){
 function scissor(){
 	var y = Math.floor(Math.random()*3);
 
-	document.getElementById('userc').innerHTML = "SCISSOR";
+	document.getElementById('userc').innerHTML = "SCISSORS";
 	document.getElementById('c').innerHTML = a[y];
 
 	if(a[y]=="PAPER")
